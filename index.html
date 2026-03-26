@@ -20,19 +20,14 @@
             width: 100%;
             padding: 30px 15px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Вирівнювання всього по центру */
         }
 
         .logo-section {
-            margin-bottom: 30px;
-            width: 100%;
+            margin-bottom: 35px;
         }
 
         .logo-section img {
-            /* ЗБІЛЬШЕНО НА 30% (було 280px) */
-            max-width: 360px;
+            max-width: 360px; /* Лого ширше на 30% */
             width: 100%;
             height: auto;
         }
@@ -41,67 +36,72 @@
             background: #000000;
             border: 1px solid #222;
             border-radius: 24px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             overflow: hidden;
-            padding-bottom: 30px;
-            /* ЗМЕНШЕНО КАРТКИ НА 25% (ширина 75% від контейнера) */
-            width: 75%;
+            padding-bottom: 35px;
+            width: 100%; /* Картка на всю ширину контейнера */
         }
 
         .card img {
-            width: 100%;
+            width: 100%; /* Фото квітів на повну ширину картки */
             display: block;
+            height: auto;
         }
 
         .card-info {
-            padding: 20px 15px 0;
+            padding: 25px 20px 0;
         }
 
         .card-info h3 {
-            font-size: 14px; /* Трохи зменшив шрифт заголовка для балансу */
+            font-size: 17px;
             font-weight: 700;
-            margin: 0 0 8px 0;
+            margin: 0 0 10px 0;
             line-height: 1.4;
             text-transform: uppercase;
         }
 
         .price {
-            font-size: 14px;
+            font-size: 16px;
             color: #ffffff;
-            margin-bottom: 12px;
-            font-weight: 500;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .description {
-            font-size: 12px; /* Трохи зменшив шрифт опису */
+            font-size: 13px;
             color: #999;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-weight: 400;
+            text-align: center;
         }
 
-        .btn {
-            display: inline-block;
-            border: 1px solid #444;
-            color: #fff;
-            padding: 10px 40px; /* Трохи зменшив кнопку */
+        /* Кнопка в палітрі YOKI */
+        .order-button {
+            background-color: #eb3b1e; /* Фірмовий червоний YOKI */
+            color: #ffffff;
             text-decoration: none;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 600;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: 0.3s;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(235, 59, 30, 0.3);
+            border: none;
         }
 
-        .btn:hover {
-            border-color: #fff;
-            background: #fff;
-            color: #000;
+        .order-button:hover {
+            background-color: #d63319;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(235, 59, 30, 0.5);
+            color: #ffffff;
         }
 
         .bottom-image {
-            margin-top: 40px;
+            margin-top: 50px;
             width: 100%;
         }
 
@@ -125,7 +125,7 @@
             <h3>БУКЕТ ЧЕРВОНИХ ТРОЯНД ТА СЕТ "ФІЛАДЕЛЬФІЯ" YOKI</h3>
             <div class="price">2 850,00 грн</div>
             <p class="description">Жест, який запам'ятовується. Розкішний букет червоних троянд від Flower Lab Vlada - символ кохання та пристрасті з безпрограшною класикою - сетом «Філадельфія» від YOKI</p>
-            <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
+            <a href="https://sites.google.com/view/yoki-flower-order/головна-сторінка" class="order-button">Оформити замовлення</a>
         </div>
     </div>
 
@@ -135,7 +135,7 @@
             <h3>БУКЕТ БІЛИХ ТРОЯНД ТА СЕТ "ФІЛАДЕЛЬФІЯ" YOKI</h3>
             <div class="price">2 850,00 грн</div>
             <p class="description">Ідеальний дует для особливого вечора, того самого зізнання. Витончений букет білих троянд від Flower Lab Vlada - символ щирості, ніжності, світлих емоцій та вишукана класика, яка доповнює момент - сет «Філадельфія» від YOKI</p>
-            <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
+            <a href="https://sites.google.com/view/yoki-flower-order/головна-сторінка" class="order-button">Оформити замовлення</a>
         </div>
     </div>
 
@@ -145,7 +145,7 @@
             <h3>БУКЕТ АМУР ТА СЕТ "ФІЛАДЕЛЬФІЯ" YOKI</h3>
             <div class="price">3 150,00 грн</div>
             <p class="description">Емоції, що говорять тихо, але впевнено. Збірний букет «Амур» від Flower Lab Vlada - про ніжність і увагу до деталей у поєднанні з тією самою класикою - сетом «Філадельфія» від YOKI</p>
-            <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
+            <a href="https://sites.google.com/view/yoki-flower-order/головна-сторінка" class="order-button">Оформити замовлення</a>
         </div>
     </div>
 
