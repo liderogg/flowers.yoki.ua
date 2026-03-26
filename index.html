@@ -18,9 +18,9 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 600px;
             width: 100%;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
         }
 
@@ -28,32 +28,41 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
             margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .header-logos img {
-            max-height: 50px;
-            filter: brightness(1.2);
+        .header-logos h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0;
         }
 
         .header-logos span {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 300;
+            color: #666;
         }
 
         .grid {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 35px;
         }
 
         .card {
             background: #000000;
             border: 1px solid #222;
-            border-radius: 20px;
+            border-radius: 25px;
             overflow: hidden;
-            padding-bottom: 30px;
+            padding-bottom: 35px;
+            transition: border-color 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #444;
         }
 
         .card img {
@@ -63,23 +72,23 @@
         }
 
         .card-content {
-            padding: 20px;
+            padding: 25px 20px 0;
         }
 
         .card h3 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
-            margin: 10px 0 15px;
+            margin: 0 0 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            line-height: 1.4;
         }
 
         .card p {
             font-size: 14px;
-            color: #aaaaaa;
+            color: #999;
             line-height: 1.6;
-            margin-bottom: 25px;
-            padding: 0 10px;
+            margin-bottom: 30px;
         }
 
         .btn {
@@ -87,13 +96,14 @@
             background-color: transparent;
             color: #ffffff;
             border: 1px solid #ffffff;
-            padding: 12px 35px;
+            padding: 14px 45px;
             text-decoration: none;
             border-radius: 50px;
-            font-size: 13px;
-            font-weight: 400;
-            transition: 0.3s;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn:hover {
@@ -102,11 +112,12 @@
         }
 
         .footer-text {
-            margin-top: 60px;
-            font-size: 26px;
+            margin-top: 70px;
+            font-size: 24px;
             font-weight: 300;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             text-transform: uppercase;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -114,36 +125,36 @@
 
 <div class="container">
     <div class="header-logos">
-        <strong style="font-size: 24px;">YOKI</strong>
+        <h1>YOKI</h1>
         <span>X</span>
-        <strong style="font-size: 24px;">FLOWER LAB</strong>
+        <h1>FLOWER LAB</h1>
     </div>
 
     <div class="grid">
         <div class="card">
-            <img src="https://drive.google.com/uc?export=view&id=16p5asFzupaCkqeKysq-QvLSCoepRoPHY" alt="Букет 1">
+            <img src="1.jpg" alt="Букет 1">
             <div class="card-content">
                 <h3>Букет червоних троянд та сет "Філадельфія"</h3>
-                <p>Символ кохання та пристрасті у поєднанні з бездоганним смаком YOKI. Найкращий вибір для романтичного вечора.</p>
-                <a href="https://t.me/your_bot" class="btn">Оформити замовлення</a>
+                <p>Символ кохання та пристрасті у поєднанні з бездоганним смаком YOKI. Найкращий вибір для особливого моменту.</p>
+                <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://drive.google.com/uc?export=view&id=1SNLc9dOrv3gpvLHHtwopkyMBTiOSl_sa" alt="Букет 2">
+            <img src="2.jpg" alt="Букет 2">
             <div class="card-content">
                 <h3>Букет білих троянд та сет "Філадельфія"</h3>
-                <p>Витонченість та ніжність у кожній деталі. Подарунок, що випромінює щирість та турботу.</p>
-                <a href="https://t.me/your_bot" class="btn">Оформити замовлення</a>
+                <p>Витонченість та ніжність у кожній деталі. Подарунок, що випромінює щирість та справжню турботу.</p>
+                <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://drive.google.com/uc?export=view&id=1eXq5vjvl68yQzJWp6b2TEhze_rrvrMpw" alt="Букет 3">
+            <img src="3.jpg" alt="Букет 3">
             <div class="card-content">
                 <h3>Букет "Амур" та сет "Філадельфія"</h3>
-                <p>Збірний букет, створений щоб дивувати. Особливий набір для тих, хто цінує оригінальність.</p>
-                <a href="https://t.me/your_bot" class="btn">Оформити замовлення</a>
+                <p>Збірний букет, створений щоб дивувати. Особливий набір для тих, хто цінує стиль та оригінальність.</p>
+                <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
             </div>
         </div>
     </div>
