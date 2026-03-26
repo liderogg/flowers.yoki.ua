@@ -35,13 +35,12 @@
         .field { margin-bottom: 15px; }
         label { display: block; font-size: 0.65rem; color: #bbb; text-transform: uppercase; margin-bottom: 6px; padding-left: 5px; letter-spacing: 1px; }
         
-        /* ВИПРАВЛЕНО: ЧІТКИЙ БІЛИЙ ТЕКСТ */
         input, textarea, select { 
             width: 100%; padding: 14px; background: #151515; border: 1px solid #333; 
             border-radius: 10px; color: #ffffff !important; font-size: 1rem; box-sizing: border-box; 
             font-family: 'Montserrat'; outline: none;
         }
-        input::placeholder, textarea::placeholder { color: #666; }
+        input::placeholder, textarea::placeholder { color: #444; }
         input:focus, select:focus, textarea:focus { border-color: #eb3b1e; background: #1a1a1a; }
 
         .type-selector { display: flex; gap: 10px; margin-bottom: 20px; }
@@ -125,8 +124,14 @@
 
             <div class="field"><label>Ім'я замовника</label><input type="text" id="name" placeholder="Введіть ваше ім'я"></div>
             <div class="field"><label>Контактний телефон</label><input type="tel" id="phone" value="+380"></div>
+            
+            <div class="field" id="address-field">
+                <label>Адреса доставки (обов'язково)</label>
+                <input type="text" id="address" placeholder="Вулиця, будинок, під'їзд...">
+            </div>
+
             <div class="field"><label>Дата та час</label><input type="datetime-local" id="datetime"></div>
-            <div class="field"><label>Адреса / Листівка</label><textarea id="comment" rows="3" placeholder="Вкажіть адресу або текст..."></textarea></div>
+            <div class="field"><label>Коментар / Текст для листівки</label><textarea id="comment" rows="2" placeholder="Ваші побажання..."></textarea></div>
 
             <button class="submit-btn" onclick="sendOrder()" id="sendBtn">Підтвердити замовлення</button>
             <div class="footer-brand">YOKI</div>
@@ -150,9 +155,14 @@
     }
 
     function updateOrderType(t) {
-        oType=t;
+        oType = t;
         document.getElementById('optDelivery').classList.toggle('active', t==='delivery');
         document.getElementById('optPickup').classList.toggle('active', t==='pickup');
+        
+        // Відображення/приховування адреси
+        const addrField = document.getElementById('address-field');
+        addrField.style.display = (t === 'delivery') ? 'block' : 'none';
+        
         fPrice = (t==='pickup') ? bPrice - 300 : bPrice;
         document.getElementById('flowerPrice').innerText = fPrice.toLocaleString() + ' UAH';
     }
@@ -165,17 +175,17 @@
         const appliances = document.getElementById('appliances').value;
         const name = document.getElementById('name').value.trim();
         const phone = document.getElementById('phone').value.trim();
+        const address = document.getElementById('address').value.trim();
         const date = document.getElementById('datetime').value;
         const comment = document.getElementById('comment').value.trim();
         const phoneRegex = /^\+380\d{9}$/;
 
-        if(!appliances || !name || !date || !phoneRegex.test(phone)) {
-            if (!appliances) alert('Оберіть кількість приборів');
-            else if (!name) alert('Введіть ім\'я замовника');
-            else if (!phoneRegex.test(phone)) alert('Введіть коректний номер +380XXXXXXXXX');
-            else if (!date) alert('Оберіть дату та час');
-            return;
-        }
+        // Перевірка полів
+        if (!appliances) { alert('Оберіть кількість приборів'); return; }
+        if (!name) { alert('Введіть ім\'я замовника'); return; }
+        if (!phoneRegex.test(phone)) { alert('Введіть коректний номер +380XXXXXXXXX'); return; }
+        if (oType === 'delivery' && !address) { alert('Будь ласка, вкажіть адресу доставки'); return; }
+        if (!date) { alert('Оберіть дату та час'); return; }
 
         document.getElementById('sendBtn').innerText = 'ВІДПРАВКА...';
 
@@ -183,6 +193,7 @@
                         `💐 **Товар:** ${curItem}\n` +
                         `🍴 **Прибори:** на ${appliances} осіб\n` +
                         `📍 **Тип:** ${oType==='delivery' ? '🚀 Доставка' : '🛍️ Самовивіз'}\n` +
+                        (oType === 'delivery' ? `🏠 **Адреса:** ${address}\n` : '') +
                         `👤 **Клієнт:** ${name}\n` +
                         `📞 **Телефон:** ${phone}\n` +
                         `⏰ **Коли:** ${date.replace('T', ' ')}\n` +
@@ -195,7 +206,7 @@
                 body: JSON.stringify({ chat_id: '-1003861474618', text: message, parse_mode: 'Markdown' })
             });
             document.getElementById('thanks-modal').style.display='flex';
-        } catch (e) { alert('Помилка з\'єднання'); }
+        } catch (e) { alert('Помилка з\'єднання з сервером'); }
     }
 </script>
 </body>
