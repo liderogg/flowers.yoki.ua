@@ -20,14 +20,20 @@
             width: 100%;
             padding: 30px 15px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Вирівнювання всього по центру */
         }
 
         .logo-section {
             margin-bottom: 30px;
+            width: 100%;
         }
 
         .logo-section img {
-            max-width: 280px;
+            /* ЗБІЛЬШЕНО НА 30% (було 280px) */
+            max-width: 360px;
+            width: 100%;
             height: auto;
         }
 
@@ -38,6 +44,8 @@
             margin-bottom: 25px;
             overflow: hidden;
             padding-bottom: 30px;
+            /* ЗМЕНШЕНО КАРТКИ НА 25% (ширина 75% від контейнера) */
+            width: 75%;
         }
 
         .card img {
@@ -46,11 +54,11 @@
         }
 
         .card-info {
-            padding: 25px 20px 0;
+            padding: 20px 15px 0;
         }
 
         .card-info h3 {
-            font-size: 16px;
+            font-size: 14px; /* Трохи зменшив шрифт заголовка для балансу */
             font-weight: 700;
             margin: 0 0 8px 0;
             line-height: 1.4;
@@ -58,14 +66,14 @@
         }
 
         .price {
-            font-size: 15px;
+            font-size: 14px;
             color: #ffffff;
             margin-bottom: 12px;
             font-weight: 500;
         }
 
         .description {
-            font-size: 13px;
+            font-size: 12px; /* Трохи зменшив шрифт опису */
             color: #999;
             line-height: 1.6;
             margin-bottom: 25px;
@@ -76,10 +84,10 @@
             display: inline-block;
             border: 1px solid #444;
             color: #fff;
-            padding: 12px 50px;
+            padding: 10px 40px; /* Трохи зменшив кнопку */
             text-decoration: none;
             border-radius: 50px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
