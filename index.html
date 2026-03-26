@@ -4,164 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YOKI x FLOWER LAB VLADA</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #000000;
             color: #ffffff;
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-            padding: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
         }
 
         .container {
-            max-width: 600px;
+            max-width: 450px; /* Вузька колонка як на скрині */
             width: 100%;
-            padding: 50px 20px;
+            padding: 40px 15px;
             text-align: center;
         }
 
-        .header-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
+        .logo-section {
             margin-bottom: 40px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            font-weight: 700;
             text-transform: uppercase;
         }
 
-        .header-logos h1 {
-            font-size: 20px;
-            font-weight: 700;
-            margin: 0;
-            letter-spacing: 2px;
-        }
-
-        .header-logos span {
-            font-size: 16px;
-            font-weight: 300;
-            color: #888;
-        }
-
-        .grid {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
+        .logo-section span {
+            font-weight: 400;
+            color: #777;
+            margin: 0 10px;
         }
 
         .card {
             background: #000000;
             border: 1px solid #222;
-            border-radius: 20px;
+            border-radius: 24px;
+            margin-bottom: 30px;
             overflow: hidden;
             padding-bottom: 30px;
         }
 
         .card img {
             width: 100%;
-            height: auto;
             display: block;
         }
 
-        .card-content {
-            padding: 20px 15px 0;
+        .card-info {
+            padding: 25px 20px 0;
         }
 
-        .card h3 {
-            font-size: 18px;
+        .card-info h3 {
+            font-size: 17px;
             font-weight: 700;
-            margin: 0 0 8px;
+            margin: 0 0 8px 0;
+            line-height: 1.3;
             text-transform: uppercase;
         }
 
         .price {
-            font-size: 18px;
-            font-weight: 400;
-            margin-bottom: 15px;
-            color: #ffffff;
-        }
-
-        .card p {
-            font-size: 13px;
+            font-size: 15px;
             color: #999;
-            line-height: 1.5;
             margin-bottom: 25px;
+            font-weight: 400;
         }
 
         .btn {
             display: inline-block;
-            background-color: transparent;
-            color: #ffffff;
-            border: 1px solid #ffffff;
-            padding: 12px 40px;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 12px 45px;
             text-decoration: none;
             border-radius: 50px;
             font-size: 12px;
             font-weight: 600;
-            transition: all 0.3s ease;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
 
         .btn:hover {
-            background-color: #ffffff;
-            color: #000000;
+            border-color: #fff;
+            background: #fff;
+            color: #000;
         }
 
         .footer-text {
-            margin-top: 60px;
-            font-size: 22px;
-            font-weight: 300;
+            margin-top: 40px;
+            font-size: 20px;
+            font-weight: 400;
             letter-spacing: 5px;
             text-transform: uppercase;
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header-logos">
-        <h1>YOKI</h1>
-        <span>X</span>
-        <h1>FLOWER LAB</h1>
+    <div class="logo-section">
+        YOKI <span>X</span> FLOWER LAB
     </div>
 
-    <div class="grid">
-        <div class="card">
-            <img src="1.jpg" alt="Троянда Еквадор">
-            <div class="card-content">
-                <h3>ТРОЯНДА ЕКВАДОР ТА СЕТ ФІЛАДЕЛЬФІЯ</h3>
-                <div class="price">2 850,00 грн</div>
-                <p>Класика, що підкорює серця. Найкраще поєднання для вашого вечора.</p>
-                <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
-            </div>
+    <div class="card">
+        <img src="1.jpg" alt="Троянда Еквадор">
+        <div class="card-info">
+            <h3>ТРОЯНДА ЕКВАДОР ТА СЕТ ФІЛАДЕЛЬФІЯ</h3>
+            <div class="price">2 850,00 грн</div>
+            <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
         </div>
+    </div>
 
-        <div class="card">
-            <img src="2.jpg" alt="Біла троянда">
-            <div class="card-content">
-                <h3>БІЛА ТРОЯНДА ТА СЕТ ФІЛАДЕЛЬФІЯ</h3>
-                <div class="price">2 850,00 грн</div>
-                <p>Витонченість та ніжність у кожному бутоні. Подарунок, що випромінює щирість.</p>
-                <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
-            </div>
+    <div class="card">
+        <img src="2.jpg" alt="Біла троянда">
+        <div class="card-info">
+            <h3>БІЛА ТРОЯНДА ТА СЕТ ФІЛАДЕЛЬФІЯ</h3>
+            <div class="price">2 850,00 грн</div>
+            <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
         </div>
+    </div>
 
-        <div class="card">
-            <img src="3.jpg" alt="Амур">
-            <div class="card-content">
-                <h3>АМУР ТА СЕТ ФІЛАДЕЛЬФІЯ</h3>
-                <div class="price">3 150,00 грн</div>
-                <p>Ексклюзивний збірний букет для особливих моментів. Створено, щоб дивувати.</p>
-                <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
-            </div>
+    <div class="card">
+        <img src="3.jpg" alt="Амур">
+        <div class="card-info">
+            <h3>АМУР ТА СЕТ ФІЛАДЕЛЬФІЯ</h3>
+            <div class="price">3 150,00 грн</div>
+            <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
         </div>
     </div>
 
     <div class="footer-text">
-        Замовляй серцем
+        ЗАМОВЛЯЙ СЕРЦЕМ
     </div>
 </div>
 
