@@ -3,239 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YOKI Flower Labs - Букети та Суші</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <title>YOKI x FLOWER LAB VLADA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Montserrat', Arial, sans-serif;
             background-color: #000000;
             color: #ffffff;
-            line-height: 1.5;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
         }
 
         .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Hero Section */
-        .hero {
+            max-width: 450px; 
             width: 100%;
-            height: 340px;
-            background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1280');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        @media (max-width: 479px) {
-            .hero {
-                height: 250px;
-            }
-        }
-
-        /* Products Section */
-        .products {
-            padding: 56px 0;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .product-card {
+            padding: 30px 15px;
             text-align: center;
         }
 
-        .product-image {
-            width: 100%;
+        .logo-section {
+            margin-bottom: 30px;
+        }
+
+        .logo-section img {
+            max-width: 280px;
             height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
         }
 
-        .product-title {
-            font-size: 13pt;
-            font-weight: 500;
-            color: #ffffff;
-            margin-bottom: 5px;
-            line-height: 1.08;
+        .card {
+            background: #000000;
+            border: 1px solid #222;
+            border-radius: 24px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            padding-bottom: 30px;
         }
 
-        .product-brand {
-            font-size: 11pt;
-            font-weight: 800;
-            color: #ff0000;
-            margin-bottom: 15px;
-        }
-
-        .product-description {
-            font-size: 10.5pt;
-            color: #ffffff;
-            text-align: justify;
-            line-height: 1.38;
-            margin-bottom: 20px;
-            padding: 0 10px;
-        }
-
-        .product-description strong {
-            font-weight: 700;
-        }
-
-        /* Button Styles */
-        .btn-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .card img {
             width: 100%;
-            padding: 20px 0;
+            display: block;
         }
 
-        .order-button {
-            background-color: #eb3b1e;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 16px 40px;
-            border-radius: 12px;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        .card-info {
+            padding: 25px 20px 0;
+        }
+
+        .card-info h3 {
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+
+        .price {
+            font-size: 15px;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 13px;
+            color: #999;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .btn {
+            display: inline-block;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 12px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(235, 59, 30, 0.3);
-            display: block;
-            text-align: center;
-            width: 90%;
-            max-width: 320px;
-            margin: 0 auto;
+            transition: 0.3s;
         }
 
-        .order-button:hover {
-            background-color: #d63319;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(235, 59, 30, 0.5);
+        .btn:hover {
+            border-color: #fff;
+            background: #fff;
+            color: #000;
         }
 
-        .order-button:active {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 10px rgba(235, 59, 30, 0.4);
+        .bottom-image {
+            margin-top: 40px;
+            width: 100%;
         }
 
-        /* Footer */
-        .footer {
-            padding: 56px 0;
-            text-align: center;
-        }
-
-        .footer-image {
-            max-width: 100%;
+        .bottom-image img {
+            width: 100%;
             height: auto;
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero"></section>
+<div class="container">
+    <div class="logo-section">
+        <img src="logo.jpg" alt="YOKI x FLOWER LAB">
+    </div>
 
-    <!-- Products Section -->
-    <section class="products">
-        <div class="container">
-            <div class="product-grid">
-                
-                <!-- Product 1: Red Roses -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600" 
-                         alt="Букет червоних троянд" 
-                         class="product-image">
-                    
-                    <h2 class="product-title">Букет червоних троянд та сет "Філадельфія"</h2>
-                    <div class="product-brand">YOKI</div>
-                    
-                    <p class="product-description">
-                        <strong>Жест, який запам'ятовується.</strong> 
-                        Розкішний букет червоних троянд від <strong>Flower Lab Vlada</strong> - 
-                        символ кохання та пристрасті з безпрограшною класикою - 
-                        сетом «Філадельфія» від <strong>YOKI</strong>
-                    </p>
-                    
-                    <div class="btn-wrapper">
-                        <a href="#order1" class="order-button">Оформити замовлення</a>
-                    </div>
-                </div>
-
-                <!-- Product 2: White Roses -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=600" 
-                         alt="Букет білих троянд" 
-                         class="product-image">
-                    
-                    <h2 class="product-title">Букет білих троянд та сет "Філадельфія"</h2>
-                    <div class="product-brand">YOKI</div>
-                    
-                    <p class="product-description">
-                        <strong>Ідеальний дует для особливого вечора, того самого зізнання.</strong> 
-                        Витончений букет білих троянд від <strong>Flower Lab Vlada</strong> - 
-                        символ щирості, ніжності, світлих емоцій та вишукана класика, 
-                        яка доповнює момент - сетом «Філадельфія» від <strong>YOKI</strong>
-                    </p>
-                    
-                    <div class="btn-wrapper">
-                        <a href="#order2" class="order-button">Оформити замовлення</a>
-                    </div>
-                </div>
-
-                <!-- Product 3: Amur Bouquet -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=600" 
-                         alt="Букет Амур" 
-                         class="product-image">
-                    
-                    <h2 class="product-title">Букет Амур та сет "Філадельфія"</h2>
-                    <div class="product-brand">YOKI</div>
-                    
-                    <p class="product-description">
-                        <strong>Емоції, що говорять тихо, але впевнено.</strong> 
-                        Збірний букет «Амур» від <strong>Flower Lab Vlada</strong> - 
-                        про ніжність і увагу до деталей у поєднанні з тією самою класикою - 
-                        сетом «Філадельфія» від <strong>YOKI</strong>
-                    </p>
-                    
-                    <div class="btn-wrapper">
-                        <a href="#order3" class="order-button">Оформити замовлення</a>
-                    </div>
-                </div>
-
-            </div>
+    <div class="card">
+        <img src="IMG_0695.PNG" alt="Букет червоних троянд">
+        <div class="card-info">
+            <h3>БУКЕТ ЧЕРВОНИХ ТРОЯНД ТА СЕТ "ФІЛАДЕЛЬФІЯ" YOKI</h3>
+            <div class="price">2 850,00 грн</div>
+            <p class="description">Жест, який запам'ятовується. Розкішний букет червоних троянд від Flower Lab Vlada - символ кохання та пристрасті з безпрограшною класикою - сетом «Філадельфія» від YOKI</p>
+            <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <section class="footer">
-        <div class="container">
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1280" 
-                 alt="YOKI Flower Labs" 
-                 class="footer-image">
+    <div class="card">
+        <img src="IMG_0693.PNG" alt="Букет білих троянд">
+        <div class="card-info">
+            <h3>БУКЕТ БІЛИХ ТРОЯНД ТА СЕТ "ФІЛАДЕЛЬФІЯ" YOKI</h3>
+            <div class="price">2 850,00 грн</div>
+            <p class="description">Ідеальний дует для особливого вечора, того самого зізнання. Витончений букет білих троянд від Flower Lab Vlada - символ щирості, ніжності, світлих емоцій та вишукана класика, яка доповнює момент - сет «Філадельфія» від YOKI</p>
+            <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
         </div>
-    </section>
+    </div>
+
+    <div class="card">
+        <img src="IMG_0694.PNG" alt="Букет Амур">
+        <div class="card-info">
+            <h3>БУКЕТ АМУР ТА СЕТ "ФІЛАДЕЛЬФІЯ" YOKI</h3>
+            <div class="price">3 150,00 грн</div>
+            <p class="description">Емоції, що говорять тихо, але впевнено. Збірний букет «Амур» від Flower Lab Vlada - про ніжність і увагу до деталей у поєднанні з тією самою класикою - сетом «Філадельфія» від YOKI</p>
+            <a href="https://t.me/yoki_delivery_bot" class="btn">Замовити</a>
+        </div>
+    </div>
+
+    <div class="bottom-image">
+        <img src="текст.jpg" alt="Замовляй серцем">
+    </div>
+</div>
 
 </body>
 </html>
