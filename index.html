@@ -7,12 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
         body { background-color: #000; color: #fff; font-family: 'Montserrat', sans-serif; margin: 0; display: flex; justify-content: center; min-height: 100vh; }
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
         .container { max-width: 450px; width: 100%; padding: 30px 15px; text-align: center; }
-        
+
+        /* КАТАЛОГ */
         #main-page { display: block; }
         .logo-section { margin-bottom: 35px; }
         .logo-section img { max-width: 360px; width: 100%; height: auto; }
-        
         .card { background: #000; border: 1px solid #222; border-radius: 24px; margin-bottom: 30px; overflow: hidden; padding-bottom: 35px; }
         .card img { width: 100%; display: block; }
         .card-info { padding: 25px 20px 0; }
@@ -21,32 +22,32 @@
         .price-tag { font-size: 18px; font-weight: 700; color: #d4af37; margin-bottom: 12px; }
         .description { font-size: 13px; color: #999; line-height: 1.6; margin-bottom: 25px; }
 
-        #order-page { display: none; width: 100%; }
-        .order-card { background: #0a0a0a; border-radius: 24px; padding: 25px; border: 1px solid #1a1a1a; text-align: left; box-sizing: border-box; }
-        .order-card h2 { color: #d4af37; text-align: center; text-transform: uppercase; font-size: 1.2rem; letter-spacing: 2px; }
+        /* ФОРМА (ПРЕМІУМ YOKI) */
+        #order-page { display: none; width: 100%; padding-top: 10px; }
+        .order-card { background: #0a0a0a; border-radius: 24px; padding: 25px; border: 1px solid #1a1a1a; text-align: left; box-shadow: 0 15px 35px rgba(0,0,0,0.8); }
+        h2 { color: #d4af37; text-align: center; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 20px 0; font-size: 1.2rem; }
 
         .item-preview { display: flex; align-items: center; gap: 15px; background: #111; padding: 15px; border-radius: 16px; margin-bottom: 20px; border: 1px solid #222; }
-        .item-preview img { width: 70px; height: 70px; border-radius: 10px; object-fit: cover; }
-        .item-details b { display: block; font-size: 0.85rem; margin-bottom: 4px; }
+        .item-preview img { width: 80px; height: 80px; border-radius: 12px; object-fit: cover; border: 1px solid #333; }
+        .item-details b { display: block; font-size: 0.9rem; color: #fff; margin-bottom: 4px; line-height: 1.2; }
         .item-details span { color: #d4af37; font-weight: bold; font-size: 1.1rem; }
 
         .field { margin-bottom: 15px; }
-        label { display: block; font-size: 0.65rem; color: #555; text-transform: uppercase; margin-bottom: 6px; padding-left: 5px; }
+        label { display: block; font-size: 0.65rem; color: #555; text-transform: uppercase; margin-bottom: 6px; padding-left: 5px; letter-spacing: 1px; }
         input, textarea, select { width: 100%; padding: 14px; background: #151515; border: 1px solid #222; border-radius: 10px; color: #fff; font-size: 1rem; box-sizing: border-box; font-family: 'Montserrat'; }
-        input:focus, select:focus { border-color: #eb3b1e; outline: none; }
-        .error-input { border-color: #eb3b1e !important; }
+        input:focus, select:focus { border-color: #eb3b1e; outline: none; background: #1a1a1a; }
 
         .type-selector { display: flex; gap: 10px; margin-bottom: 20px; }
-        .type-option { flex: 1; text-align: center; padding: 12px; border: 1px solid #222; border-radius: 10px; cursor: pointer; font-size: 0.75rem; font-weight: bold; transition: 0.3s; }
+        .type-option { flex: 1; text-align: center; padding: 12px; border: 1px solid #222; border-radius: 10px; cursor: pointer; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
         .type-option.active { border-color: #eb3b1e; background: rgba(235, 59, 30, 0.1); color: #eb3b1e; }
 
-        .yoki-btn { background: linear-gradient(135deg, #eb3b1e 0%, #b2182b 100%); color: #fff; padding: 18px; border-radius: 14px; font-size: 15px; font-weight: bold; text-transform: uppercase; width: 100%; border: none; cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(235, 59, 30, 0.3); text-align: center; display: block; box-sizing: border-box; }
-        .yoki-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(235, 59, 30, 0.5); }
+        .submit-btn { background: linear-gradient(135deg, #eb3b1e 0%, #b2182b 100%); color: #fff; width: 100%; padding: 18px; border: none; border-radius: 14px; font-size: 1rem; font-weight: bold; text-transform: uppercase; cursor: pointer; box-shadow: 0 5px 15px rgba(235, 59, 30, 0.3); }
+        .submit-btn:active { transform: scale(0.98); }
+        .footer-brand { text-align: center; margin-top: 25px; color: #1a1a1a; font-weight: 900; letter-spacing: 8px; font-size: 20px; }
 
-        /* MODAL THANK YOU */
+        /* MODAL */
         #thanks-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 100; justify-content: center; align-items: center; }
-        .modal-content { background: #111; padding: 40px; border-radius: 30px; border: 1px solid #eb3b1e; text-align: center; max-width: 300px; }
-        .modal-content h2 { color: #eb3b1e; margin-bottom: 15px; }
+        .modal-content { background: #111; padding: 40px; border-radius: 30px; border: 1px solid #eb3b1e; text-align: center; max-width: 280px; }
     </style>
 </head>
 <body>
@@ -58,33 +59,33 @@
         <div class="card">
             <img src="IMG_0695.PNG">
             <div class="card-info">
-                <h3>ТРОЯНДА ЕКВАДОР ТА СЕТ "ФІЛАДЕЛЬФІЯ"</h3>
+                <h3>БУКЕТ ЧЕРВОНИХ ТРОЯНД ТА СЕТ "ФІЛАДЕЛЬФІЯ"</h3>
                 <div class="brand-sub">YOKI</div>
-                <div class="price-tag">3 730,00 грн</div>
-                <p class="description">Розкішний букет червоних троянд від Flower Lab Vlada - символ кохання.</p>
-                <button class="yoki-btn" onclick="openOrder('Троянда Еквадор', 3730, 'IMG_0695.PNG')">Оформити замовлення</button>
+                <div class="price-tag">3 730 UAH</div>
+                <p class="description">Символ кохання та пристрасті з безпрограшною класикою.</p>
+                <button class="submit-btn" onclick="openOrder('Букет червоних троянд', 3730, 'IMG_0695.PNG')">Оформити замовлення</button>
             </div>
         </div>
 
         <div class="card">
             <img src="IMG_0693.PNG">
             <div class="card-info">
-                <h3>БІЛА ТРОЯНДА ТА СЕТ "ФІЛАДЕЛЬФІЯ"</h3>
+                <h3>БУКЕТ БІЛИХ ТРОЯНД ТА СЕТ "ФІЛАДЕЛЬФІЯ"</h3>
                 <div class="brand-sub">YOKI</div>
-                <div class="price-tag">3 730,00 грн</div>
-                <p class="description">Витончений букет білих троянд - символ щирості та ніжності.</p>
-                <button class="yoki-btn" onclick="openOrder('Біла троянда', 3730, 'IMG_0693.PNG')">Оформити замовлення</button>
+                <div class="price-tag">3 730 UAH</div>
+                <p class="description">Символ щирості, ніжності та світлих емоцій.</p>
+                <button class="submit-btn" onclick="openOrder('Букет білих троянд', 3730, 'IMG_0693.PNG')">Оформити замовлення</button>
             </div>
         </div>
 
         <div class="card">
             <img src="IMG_0694.PNG">
             <div class="card-info">
-                <h3>АМУР ТА СЕТ "ФІЛАДЕЛЬФІЯ"</h3>
+                <h3>БУКЕТ АМУР ТА СЕТ "ФІЛАДЕЛЬФІЯ"</h3>
                 <div class="brand-sub">YOKI</div>
-                <div class="price-tag">3 730,00 грн</div>
-                <p class="description">Збірний букет «Амур» для особливих моментів.</p>
-                <button class="yoki-btn" onclick="openOrder('Амур', 3730, 'IMG_0694.PNG')">Оформити замовлення</button>
+                <div class="price-tag">3 730 UAH</div>
+                <p class="description">Емоції, що говорять тихо, але впевнено.</p>
+                <button class="submit-btn" onclick="openOrder('Букет Амур', 3730, 'IMG_0694.PNG')">Оформити замовлення</button>
             </div>
         </div>
         <img src="текст.jpg" style="width:100%; border-radius:15px;">
@@ -94,63 +95,63 @@
         <div class="order-card">
             <h2>Оформлення</h2>
             <div class="item-preview">
-                <img id="display-img" src="">
+                <img id="itemPic" src="">
                 <div class="item-details">
-                    <b id="display-name"></b>
-                    <span id="display-price"></span>
+                    <b id="flowerName"></b>
+                    <span id="flowerPrice"></span>
                 </div>
             </div>
 
             <label>Спосіб отримання</label>
             <div class="type-selector">
-                <div class="type-option active" id="optDelivery" onclick="updateType('delivery')">Доставка</div>
-                <div class="type-option" id="optPickup" onclick="updateType('pickup')">Самовивіз (-300)</div>
+                <div class="type-option active" id="optDelivery" onclick="updateOrderType('delivery')">Доставка</div>
+                <div class="type-option" id="optPickup" onclick="updateOrderType('pickup')">Самовивіз (-300)</div>
             </div>
 
-            <div class="field"><label>Кількість приборів (обов'язково)</label>
+            <div class="field">
+                <label>Кількість приборів (обов'язково)</label>
                 <select id="appliances">
-                    <option value="" disabled selected>Оберіть кількість...</option>
+                    <option value="" disabled selected>Оберіть кількість осіб...</option>
                     <option value="1">1 особа</option><option value="2">2 особи</option>
                     <option value="3">3 особи</option><option value="4">4 особи</option><option value="5">5 осіб</option>
                 </select>
             </div>
 
-            <div class="field"><label>Ім'я</label><input type="text" id="name"></div>
-            <div class="field"><label>Телефон</label><input type="tel" id="phone" value="+380"></div>
+            <div class="field"><label>Ім'я замовника</label><input type="text" id="name" placeholder="Введіть ваше ім'я"></div>
+            <div class="field"><label>Контактний телефон</label><input type="tel" id="phone" value="+380"></div>
             <div class="field"><label>Дата та час</label><input type="datetime-local" id="datetime"></div>
-            <div class="field"><label>Адреса / Листівка</label><textarea id="comment" rows="2"></textarea></div>
+            <div class="field"><label>Адреса / Листівка</label><textarea id="comment" rows="3" placeholder="Вкажіть адресу або текст..."></textarea></div>
 
-            <button class="yoki-btn" onclick="sendOrder()" id="sendBtn">Підтвердити</button>
+            <button class="submit-btn" onclick="sendOrder()" id="sendBtn">Підтвердити замовлення</button>
+            <div class="footer-brand">YOKI</div>
         </div>
     </div>
 </div>
 
-<div id="thanks-modal"><div class="modal-content"><h2>ДЯКУЄМО!</h2><p>Ваше замовлення прийнято. Ми зв'яжемося з вами!</p><button class="yoki-btn" onclick="location.reload()">ОК</button></div></div>
+<div id="thanks-modal"><div class="modal-content"><h2>ДЯКУЄМО!</h2><p>Замовлення прийнято!</p><button class="submit-btn" onclick="location.reload()">ОК</button></div></div>
 
 <script>
-    let curItem = "", bPrice = 0, fPrice = 0, oType = 'delivery';
+    let curItem="", bPrice=0, fPrice=0, oType='delivery';
 
     function openOrder(n, p, i) {
-        curItem = n; bPrice = p; fPrice = p;
-        document.getElementById('display-name').innerText = n;
-        document.getElementById('display-img').src = i;
-        updateType('delivery');
+        curItem=n; bPrice=p; fPrice=p;
+        document.getElementById('flowerName').innerText = n + ' та сет "Філадельфія"';
+        document.getElementById('itemPic').src = i;
+        updateOrderType('delivery');
         document.getElementById('main-page').style.display='none';
         document.getElementById('order-page').style.display='block';
         window.scrollTo(0,0);
     }
 
-    function updateType(t) {
-        oType = t;
+    function updateOrderType(t) {
+        oType=t;
         document.getElementById('optDelivery').classList.toggle('active', t==='delivery');
         document.getElementById('optPickup').classList.toggle('active', t==='pickup');
         fPrice = (t==='pickup') ? bPrice - 300 : bPrice;
-        document.getElementById('display-price').innerText = fPrice + ' UAH';
+        document.getElementById('flowerPrice').innerText = fPrice.toLocaleString() + ' UAH';
     }
 
-    // Авто-підстановка +380 та валідація
-    const phoneInput = document.getElementById('phone');
-    phoneInput.addEventListener('input', (e) => {
+    document.getElementById('phone').addEventListener('input', (e) => {
         if (!e.target.value.startsWith('+380')) e.target.value = '+380';
     });
 
@@ -160,34 +161,32 @@
         const phone = document.getElementById('phone').value.trim();
         const date = document.getElementById('datetime').value;
         const comment = document.getElementById('comment').value.trim();
-        
-        // Перевірка телефону (укр формат)
         const phoneRegex = /^\+380\d{9}$/;
-        
+
         if(!appliances || !name || !date || !phoneRegex.test(phone)) {
-            if(!phoneRegex.test(phone)) alert('Введіть коректний номер: +380XXXXXXXXX');
-            else alert('Будь ласка, заповніть всі обов\'язкові поля');
+            alert(phoneRegex.test(phone) ? 'Заповніть всі поля та оберіть кількість приборів' : 'Введіть коректний номер +380XXXXXXXXX');
             return;
         }
 
         document.getElementById('sendBtn').innerText = 'ВІДПРАВКА...';
 
-        const text = `🌹 **НОВЕ ЗАМОВЛЕННЯ**\n\n` +
-                     `💐 **Товар:** ${curItem}\n` +
-                     `🍴 **Прибори:** на ${appliances} осіб\n` +
-                     `📍 **Тип:** ${oType==='delivery'?'Доставка':'Самовивіз'}\n` +
-                     `👤 **Клієнт:** ${name}\n` +
-                     `📞 **Телефон:** ${phone}\n` +
-                     `⏰ **Час:** ${date.replace('T',' ')}\n` +
-                     `💬 **Коментар:** ${comment || '-'}\n` +
-                     `💰 **СУМА:** ${fPrice} грн`;
+        const message = `🌹 **НОВЕ ЗАМОВЛЕННЯ YOKI**\n\n` +
+                        `💐 **Товар:** ${curItem}\n` +
+                        `🍴 **Прибори:** на ${appliances} осіб\n` +
+                        `📍 **Тип:** ${oType==='delivery' ? '🚀 Доставка' : '🛍️ Самовивіз'}\n` +
+                        `👤 **Клієнт:** ${name}\n` +
+                        `📞 **Телефон:** ${phone}\n` +
+                        `⏰ **Коли:** ${date.replace('T', ' ')}\n` +
+                        `💬 **Коментар:** ${comment || 'Немає'}\n` +
+                        `💰 **СУМА:** ${fPrice} грн`;
 
-        await fetch(`https://api.telegram.org/bot8420074368:AAEQNNufw-trf8yC_rg22vKakKEHseAvp6s/sendMessage`, {
-            method: 'POST', headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ chat_id: '-1003861474618', text: text, parse_mode: 'Markdown' })
-        });
-
-        document.getElementById('thanks-modal').style.display = 'flex';
+        try {
+            await fetch(`https://api.telegram.org/bot8420074368:AAEQNNufw-trf8yC_rg22vKakKEHseAvp6s/sendMessage`, {
+                method: 'POST', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ chat_id: '-1003861474618', text: message, parse_mode: 'Markdown' })
+            });
+            document.getElementById('thanks-modal').style.display='flex';
+        } catch (e) { alert('Помилка з\'єднання'); }
     }
 </script>
 </body>
